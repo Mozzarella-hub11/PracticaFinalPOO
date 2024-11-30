@@ -7,9 +7,8 @@ public class Cliente implements Serializable {
     private String nombre;
     private String telefono;
     private boolean recibePublicidad;
-
     // Lista estática para gestionar todos los clientes
-    private static List<Cliente> clientes = new ArrayList<>();
+    private List<Cliente> clientes;
 
     // Constructor
     public Cliente(String dni, String nombre, String telefono, boolean recibePublicidad) {
@@ -20,7 +19,7 @@ public class Cliente implements Serializable {
     }
 
     // Metodos de gestión
-    public static void altaDeCliente(String dni, String nombre, String telefono, boolean recibePublicidad) {
+    public void altaDeCliente(String dni, String nombre, String telefono, boolean recibePublicidad) {
         for (Cliente cliente : clientes) {
             if (cliente.getDni().equals(dni)) {
                 System.out.println("El cliente con DNI " + dni + " ya está registrado.");
@@ -32,27 +31,28 @@ public class Cliente implements Serializable {
         System.out.println("Cliente registrado exitosamente: " + nombre);
     }
 
-    public static void mostrarCliente(String dni) {
+    public void mostrarCliente(String dni) {
         for (Cliente cliente : clientes) {
             if (cliente.getDni().equals(dni)) {
-                System.out.println(cliente);
+                cliente.toString();
                 return;
             }
         }
         System.out.println("No se encontró un cliente con el DNI " + dni);
     }
 
-    public static void mostrarTodosClientes() {
+    public void mostrarTodosClientes() {
         if (clientes.isEmpty()) {
             System.out.println("No hay clientes registrados.");
             return;
         }
         for (Cliente cliente : clientes) {
-            System.out.println("DNI: " + cliente.getDni() + ", Nombre: " + cliente.getNombre());
+            //System.out.println("DNI: " + cliente.getDni() + ", Nombre: " + cliente.getNombre());
+            cliente.toString();
         }
     }
 
-    public static void mostrarClientesDispuestos() {
+    public void mostrarClientesDispuestos() {
         boolean hayClientesDispuestos = false;
         for (Cliente cliente : clientes) {
             if (cliente.isRecibePublicidad()) {

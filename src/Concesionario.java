@@ -12,7 +12,7 @@ public class Concesionario {
 
     public void altaSeccion(String nombre, String descripcion) {
         for (Seccion seccion : secciones) {
-            if(seccion.getId().equalsIgnoreCase(nombre)) {
+            if(seccion.getId().equalsIgnoreCase(nombre.trim())) {
                 System.out.println("Error, ya existe una seccion con ese ID");
                 return;
 

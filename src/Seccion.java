@@ -15,7 +15,7 @@ public class Seccion {
      * @param id
      * Constructor
      */
-    public Seccion(String descripcion, String id) {
+    public Seccion(String id, String descripcion ) {
         this.descripcion = descripcion;
         this.id = id;
         this.coches = new ArrayList<Coche>();
