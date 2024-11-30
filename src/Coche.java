@@ -1,3 +1,3 @@
 public class Coche {
-    System.out
+    System.out.printf("Hello and welcome!");
 }
