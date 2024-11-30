@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Seccion {
@@ -6,14 +7,18 @@ public class Seccion {
     private List<Coche> coches;
 
 
-    public Seccion(String descripcion, String id, List<Coche> coches) {
+    public Seccion(String descripcion, String id) {
         this.descripcion = descripcion;
         this.id = id;
-        this.coches = coches;
+        this.coches = new ArrayList<Coche>();
     }
 
     public void agregarCoche(Coche coche) {
-
+        if (!this.coches.contains(coche)) {
+            this.coches.add(coche);
+        }else{
+            System.out.println("El coche ya esta registrado");
+        }
 
     }
 
