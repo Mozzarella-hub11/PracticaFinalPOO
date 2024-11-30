@@ -1,9 +1,13 @@
+import java.util.List;
+
 public class Coche {
 
     private String id;
     private double precioBase;
     private int stock;
-    private List<Mejora>;
+    private List<Mejora> mejoras;
+
+
 
     public double getPrecioBase() {
         return precioBase;

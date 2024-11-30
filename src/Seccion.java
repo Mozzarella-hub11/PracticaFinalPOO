@@ -1,18 +1,30 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class Seccion {
     private String id;
     private String descripcion;
     private List<Coche> coches;
 
 
+    /**
+     * @param descripcion
+     * @param id
+     * Constructor
+     */
     public Seccion(String descripcion, String id) {
         this.descripcion = descripcion;
         this.id = id;
         this.coches = new ArrayList<Coche>();
     }
 
+    /**
+     * @param coche
+     * Metodo que agrega un coche
+     */
     public void agregarCoche(Coche coche) {
         if (!this.coches.contains(coche)) {
             this.coches.add(coche);
@@ -23,6 +35,11 @@ public class Seccion {
 
     }
 
+    /**
+     * @param idCoche
+     * @return
+     * metodo Eliminar coche, Elimina un coche pasandole su ID, comprueba
+     */
     public boolean eliminarCoche(String idCoche) {
         for (Coche coche : coches) {
             if (coche.getId().equals(idCoche)) {
@@ -40,6 +57,7 @@ public class Seccion {
         System.out.println("Sección ID: " + getId() + ", Descripción: " + getDescripcion());
     }
 
+
     public boolean existeCoche(String idCoche) {
         for (Coche coche : coches) {
             if (coche.getId().equals(idCoche)) {
@@ -49,7 +67,9 @@ public class Seccion {
         return false;  // El coche no existe
     }
 
-
+    public boolean tieneCoches() {
+        return !coches.isEmpty();  // Si la lista de coches está vacía, devuelve false
+    }
 
     public void mostrarCoches() {
         if (coches.isEmpty()) {
