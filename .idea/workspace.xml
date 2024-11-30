@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9e6ebb6-4813-45ab-ac88-8f2ca97c591c" name="Changes" comment="cambios a Mejora y Seccion">
-      <change beforePath="$PROJECT_DIR$/src/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Seccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Seccion.java" afterDir="false" />
+    <list default="true" id="e9e6ebb6-4813-45ab-ac88-8f2ca97c591c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Mejora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +40,7 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2pZi7FL3jIjMGCDxwvQTFiZjxlw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,23 +82,6 @@
       <workItem from="1732979835040" duration="1000" />
       <workItem from="1732987483737" duration="450000" />
     </task>
-    <task id="LOCAL-00001" summary="Se ha agregado la clase Seccion con todos sus metodos (VACIOS)&#10;sus respectivos Getters y setters y sus atributos">
-      <option name="closed" value="true" />
-      <created>1732989239097</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1732989239097</updated>
-    </task>
-    <task id="LOCAL-00002" summary="cambios a Mejora y Seccion">
-      <option name="closed" value="true" />
-      <created>1732989879713</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1732989879713</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,10 +97,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se ha agregado la clase Seccion con todos sus metodos (VACIOS)&#10;sus respectivos Getters y setters y sus atributos" />
-    <MESSAGE value="cambios a Mejora y Seccion" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios a Mejora y Seccion" />
   </component>
 </project>

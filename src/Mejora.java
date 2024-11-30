@@ -4,7 +4,7 @@ public class Mejora implements Serializable{
     private String nombre;
     private double porcentajeIncremento;
 
-    //Constructores
+    //Constructor
     public Mejora(String nombre, double porcentajeIncremento) {
         this.nombre = nombre;
         this.porcentajeIncremento = porcentajeIncremento;
@@ -43,6 +43,9 @@ public class Mejora implements Serializable{
     }
 
     public void setPorcentajeIncremento(double porcentajeIncremento) {
+        if (porcentajeIncremento < 0) {
+            throw new IllegalArgumentException("El porcentaje de incremento no puede ser negativo.");
+        }
         this.porcentajeIncremento = porcentajeIncremento;
     }
 }
