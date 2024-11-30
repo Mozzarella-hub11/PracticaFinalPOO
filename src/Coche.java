@@ -1,3 +1,9 @@
 public class Coche {
-    System.out.printf("Hello and welcome!");
+
+    private String id;
+    private double precioBase;
+    private int stock;
+    private List<Mejora>;
+
+
 }
