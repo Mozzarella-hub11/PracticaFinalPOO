@@ -1,108 +1,95 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class Seccion {
-    private String id;
-    private String descripcion;
-    private List<Coche> coches;
+    private String id;  // Identificador único de la sección
+    private String descripcion;  // Descripción de la sección
+    private List<Coche> coches;  // Lista de coches en la sección
 
-
-    /**
-     * @param descripcion
-     * @param id
-     * Constructor
-     */
-    public Seccion(String id, String descripcion ) {
-        this.descripcion = descripcion;
-        this.id = id;
-        this.coches = new ArrayList<Coche>();
+    // Constructor
+    public Seccion(String id, String descripcion) {
+        this.id = id.trim();  // Eliminamos espacios adicionales
+        this.descripcion = descripcion.trim();
+        this.coches = new ArrayList<>();
     }
 
-    /**
-     * @param coche
-     * Metodo que agrega un coche
-     */
+    // Método para agregar un coche
     public void agregarCoche(Coche coche) {
-        if (!this.coches.contains(coche)) {
-            this.coches.add(coche);
-
-        }else{
-            System.out.println("El coche ya esta registrado");
+        if (coche == null) {
+            System.out.println("Error: El coche no puede ser nulo.");
+            return;
         }
-
+        if (!coches.contains(coche)) {
+            coches.add(coche);
+            System.out.println("Coche con ID " + coche.getId() + " añadido a la sección.");
+        } else {
+            System.out.println("El coche con ID " + coche.getId() + " ya está registrado en esta sección.");
+        }
     }
 
-    /**
-     * @param idCoche
-     * @return
-     * metodo Eliminar coche, Elimina un coche pasandole su ID, comprueba
-     */
+    // Método para eliminar un coche usando removeIf
     public boolean eliminarCoche(String idCoche) {
-        for (Coche coche : coches) {
-            if (coche.getId().equals(idCoche)) {
-                coches.remove(coche);
-                System.out.println("Coche con ID " + idCoche + " eliminado de la sección.");
-                return true;
-            }
+        boolean eliminado = coches.removeIf(coche -> coche.getId().equals(idCoche));
+        if (eliminado) {
+            System.out.println("Coche con ID " + idCoche + " eliminado de la sección.");
+        } else {
+            System.out.println("Error: No se encontró el coche con ID " + idCoche + " en la sección.");
         }
-        System.out.println("Error: No se encontró el coche con ID " + idCoche + " en la sección.");
-        return false;
+        return eliminado;
     }
 
-
-    public void mostrarSeccion(){
-        System.out.println("Sección ID: " + getId() + ", Descripción: " + getDescripcion());
+    // Mostrar la información básica de la sección
+    public void mostrarSeccion() {
+        System.out.println("Sección ID: " + id + ", Descripción: " + descripcion);
     }
 
-
+    // Verificar si existe un coche por su ID
     public boolean existeCoche(String idCoche) {
-        for (Coche coche : coches) {
-            if (coche.getId().equals(idCoche)) {
-                return true;  // El coche existe
-            }
-        }
-        return false;  // El coche no existe
+        return coches.stream().anyMatch(coche -> coche.getId().equals(idCoche));
     }
 
+    // Verificar si la sección tiene coches
     public boolean tieneCoches() {
-        return !coches.isEmpty();  // Si la lista de coches está vacía, devuelve false
+        return !coches.isEmpty();
     }
 
+    // Mostrar todos los coches de la sección
     public void mostrarCoches() {
         if (coches.isEmpty()) {
             System.out.println("No hay coches disponibles en esta sección.");
         } else {
             System.out.println("Coches en la sección '" + id + "':");
-            for (Coche coche : coches) {
-                System.out.println(coche);  // Se supone que la clase Coche tiene un método toString()
-            }
+            coches.forEach(coche -> System.out.println(coche));
         }
     }
 
+    // Getters
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public List<Coche> getCoches() {
-        return coches;
+        return new ArrayList<>(coches);  // Devolvemos una copia para evitar modificaciones externas
     }
 
-    public void setCoches(List<Coche> coches) {
-        this.coches = coches;
+    // Setters con validaciones
+    public void setId(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            System.out.println("Error: El ID no puede estar vacío.");
+            return;
+        }
+        this.id = id.trim();
+    }
+
+    public void setDescripcion(String descripcion) {
+        if (descripcion == null || descripcion.trim().isEmpty()) {
+            System.out.println("Error: La descripción no puede estar vacía.");
+            return;
+        }
+        this.descripcion = descripcion.trim();
     }
 }

@@ -1,88 +1,29 @@
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-public class Cliente implements Serializable {
-    private String dni;
+public class Cliente {
+    private String dni;  // Identificador único del cliente
     private String nombre;
     private String telefono;
     private boolean recibePublicidad;
-    // Lista estática para gestionar todos los clientes
-    private List<Cliente> clientes;
 
     // Constructor
     public Cliente(String dni, String nombre, String telefono, boolean recibePublicidad) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.telefono = telefono;
+        if (dni == null || dni.trim().isEmpty()) {
+            throw new IllegalArgumentException("El DNI no puede estar vacío.");
+        }
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        if (telefono == null || telefono.trim().isEmpty()) {
+            throw new IllegalArgumentException("El teléfono no puede estar vacío.");
+        }
+        this.dni = dni.trim();
+        this.nombre = nombre.trim();
+        this.telefono = telefono.trim();
         this.recibePublicidad = recibePublicidad;
     }
 
-    // Metodos de gestión
-    public void altaDeCliente(String dni, String nombre, String telefono, boolean recibePublicidad) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getDni().equals(dni)) {
-                System.out.println("El cliente con DNI " + dni + " ya está registrado.");
-                return;
-            }
-        }
-        Cliente nuevoCliente = new Cliente(dni, nombre, telefono, recibePublicidad);
-        clientes.add(nuevoCliente);
-        System.out.println("Cliente registrado exitosamente: " + nombre);
-    }
-
-    public void mostrarCliente(String dni) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getDni().equals(dni)) {
-                cliente.toString();
-                return;
-            }
-        }
-        System.out.println("No se encontró un cliente con el DNI " + dni);
-    }
-
-    public void mostrarTodosClientes() {
-        if (clientes.isEmpty()) {
-            System.out.println("No hay clientes registrados.");
-            return;
-        }
-        for (Cliente cliente : clientes) {
-            //System.out.println("DNI: " + cliente.getDni() + ", Nombre: " + cliente.getNombre());
-            cliente.toString();
-        }
-    }
-
-    public void mostrarClientesDispuestos() {
-        boolean hayClientesDispuestos = false;
-        for (Cliente cliente : clientes) {
-            if (cliente.isRecibePublicidad()) {
-                System.out.println("Nombre: " + cliente.getNombre() + ", Teléfono: " + cliente.getTelefono());
-                hayClientesDispuestos = true;
-            }
-        }
-        if (!hayClientesDispuestos) {
-            System.out.println("No hay clientes dispuestos a recibir publicidad.");
-        }
-    }
-
-    // Metodo toString para mostrar la información de un cliente
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "DNI='" + dni + '\'' +
-                ", Nombre='" + nombre + '\'' +
-                ", Teléfono='" + telefono + '\'' +
-                ", Recibe Publicidad=" + (recibePublicidad ? "Sí" : "No") +
-                '}';
-    }
-
-    // Getters y Setters
+    // Getters y Setters con validaciones
     public String getDni() {
         return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
     public String getNombre() {
@@ -90,7 +31,10 @@ public class Cliente implements Serializable {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        this.nombre = nombre.trim();
     }
 
     public String getTelefono() {
@@ -98,7 +42,10 @@ public class Cliente implements Serializable {
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        if (telefono == null || telefono.trim().isEmpty()) {
+            throw new IllegalArgumentException("El teléfono no puede estar vacío.");
+        }
+        this.telefono = telefono.trim();
     }
 
     public boolean isRecibePublicidad() {
@@ -107,5 +54,16 @@ public class Cliente implements Serializable {
 
     public void setRecibePublicidad(boolean recibePublicidad) {
         this.recibePublicidad = recibePublicidad;
+    }
+
+    // Método toString para imprimir la información del cliente
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "DNI='" + dni + '\'' +
+                ", Nombre='" + nombre + '\'' +
+                ", Teléfono='" + telefono + '\'' +
+                ", Recibe Publicidad=" + (recibePublicidad ? "Sí" : "No") +
+                '}';
     }
 }

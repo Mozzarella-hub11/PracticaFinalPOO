@@ -1,41 +1,38 @@
-import java.io.Serializable;
+public class Mejora {
+    private String nombre;  // Nombre de la mejora
+    private double porcentajeIncremento;  // Incremento como valor decimal (por ejemplo, 0.1 para 10%)
 
-public class Mejora implements Serializable{
-    private String nombre;
-    private double porcentajeIncremento;
-
-    //Constructor
+    // Constructor
     public Mejora(String nombre, double porcentajeIncremento) {
-        this.nombre = nombre;
+        if (porcentajeIncremento < 0) {
+            throw new IllegalArgumentException("El porcentaje de incremento no puede ser negativo.");
+        }
+        this.nombre = nombre.trim();
         this.porcentajeIncremento = porcentajeIncremento;
     }
 
-
-
-    // Metodo para aplicar el incremento al precio base
+    // Métodos y validaciones son los mismos que en la versión anterior
     public double aplicarIncremento(double precioBase) {
-        return precioBase + (precioBase * (porcentajeIncremento / 100));
+        if (precioBase < 0) {
+            throw new IllegalArgumentException("El precio base no puede ser negativo.");
+        }
+        return precioBase + (precioBase * porcentajeIncremento);
     }
 
-    // Metodo para mostrar los detalles de la mejora
     @Override
     public String toString() {
-        return "Mejora{" +
-                "nombre='" + nombre + '\'' +
-                ", porcentajeIncremento=" + porcentajeIncremento +
-                "%}";
+        return String.format("Mejora: %s (Incremento: %.2f%%)", nombre, porcentajeIncremento * 100);
     }
 
-
-
-
-    //Getters y Setters
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        this.nombre = nombre.trim();
     }
 
     public double getPorcentajeIncremento() {
@@ -49,5 +46,3 @@ public class Mejora implements Serializable{
         this.porcentajeIncremento = porcentajeIncremento;
     }
 }
-
-
