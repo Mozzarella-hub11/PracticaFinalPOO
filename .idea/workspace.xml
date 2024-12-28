@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9e6ebb6-4813-45ab-ac88-8f2ca97c591c" name="Changes" comment="Añadido el identificador a mejoras&#10;Añadida la clase Concesionario.java y sus metodos(faltan algunos)&#10;añadidos metodos a Seccion.java">
-      <change afterPath="$PROJECT_DIR$/src/GestorClientes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GestorDatos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Venta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_11_2024_18_55_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_11_2024_18_55__Changes_.xml" beforeDir="false" />
+    <list default="true" id="e9e6ebb6-4813-45ab-ac88-8f2ca97c591c" name="Changes" comment="Terminado todo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Concesionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Concesionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mejora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mejora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Seccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Seccion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +84,7 @@
       <workItem from="1732987483737" duration="450000" />
       <workItem from="1733335198776" duration="772000" />
       <workItem from="1735293845885" duration="955000" />
-      <workItem from="1735397851085" duration="1342000" />
+      <workItem from="1735397851085" duration="2237000" />
     </task>
     <task id="LOCAL-00001" summary="Se ha agregado la clase Seccion con todos sus metodos (VACIOS)&#10;sus respectivos Getters y setters y sus atributos">
       <option name="closed" value="true" />
@@ -122,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732993931791</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Terminado todo">
+      <option name="closed" value="true" />
+      <created>1735399465194</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735399465194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +139,7 @@
     <MESSAGE value="Se ha agregado la clase Seccion con todos sus metodos (VACIOS)&#10;sus respectivos Getters y setters y sus atributos" />
     <MESSAGE value="cambios a Mejora y Seccion" />
     <MESSAGE value="Añadido el identificador a mejoras&#10;Añadida la clase Concesionario.java y sus metodos(faltan algunos)&#10;añadidos metodos a Seccion.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido el identificador a mejoras&#10;Añadida la clase Concesionario.java y sus metodos(faltan algunos)&#10;añadidos metodos a Seccion.java" />
+    <MESSAGE value="Terminado todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminado todo" />
   </component>
 </project>
